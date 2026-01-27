@@ -70,6 +70,18 @@ Date: 2026-01-27
 - Nginx serves over HTTP during testing.
 - Switch to HTTPS and domain when ready.
 
+## Visual Style + Layout
+- Modern, content-first style (not app-like).
+- Hero: role positioning + key metrics + 3 featured project cards.
+- 12-column grid; project detail pages use "overview -> deep dive" layout.
+- Neutral background with one accent color (tech blue/green).
+- Typography: large title, clean body; keep motion subtle.
+
+## Bilingual Strategy
+- Separate routes: `/zh` and `/en` (no runtime translation).
+- Navigation includes a language switcher.
+- Structure stays consistent across languages.
+
 ## Testing/Verification
 - Lint + type check.
 - Build succeeds.
