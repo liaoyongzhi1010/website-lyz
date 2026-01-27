@@ -47,40 +47,28 @@ export default async function BlogPage({
       : "zh";
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold text-neutral-900">
-          {lang === "zh" ? "博客" : "Blog"}
-        </h1>
-        <p className="text-sm text-neutral-600">
-          {lang === "zh"
-            ? "记录工程实践、系统优化与评测方法。"
-            : "Notes on engineering practices, system optimization, and evaluation."}
-        </p>
-      </div>
-      <div className="grid gap-4">
-        {posts[lang].map((post) => (
-          <article
-            key={post.title}
-            className="rounded-2xl border border-neutral-200 bg-white p-5"
-          >
-            <h2 className="text-base font-semibold text-neutral-900">
-              {post.title}
-            </h2>
-            <p className="mt-2 text-sm text-neutral-600">{post.summary}</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-xs text-neutral-500"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
+    <div className="grid gap-4">
+      {posts[lang].map((post) => (
+        <article
+          key={post.title}
+          className="rounded-2xl border border-neutral-200 bg-white p-5"
+        >
+          <h2 className="text-base font-semibold text-neutral-900">
+            {post.title}
+          </h2>
+          <p className="mt-2 text-sm text-neutral-600">{post.summary}</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-xs text-neutral-500"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
     </div>
   );
 }
