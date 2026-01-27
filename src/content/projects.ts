@@ -28,7 +28,10 @@ export type Project = {
   role: string;
   period: string;
   stack: string[];
-  metrics: ProjectMetric[];
+  metrics: {
+    zh: ProjectMetric[];
+    en: ProjectMetric[];
+  };
   links: ProjectLink[];
   i18n: {
     zh: ProjectI18n;
@@ -47,11 +50,18 @@ export const projects: Project[] = [
     role: "Tech Lead / Backend",
     period: "2024 - 2025",
     stack: ["vLLM", "Ray", "K8s", "FastAPI", "Prometheus"],
-    metrics: [
-      { label: "P99 延迟", value: "-35%" },
-      { label: "吞吐提升", value: "3.8x" },
-      { label: "成本下降", value: "40%" },
-    ],
+    metrics: {
+      zh: [
+        { label: "P99 延迟", value: "-35%" },
+        { label: "吞吐提升", value: "3.8x" },
+        { label: "成本下降", value: "40%" },
+      ],
+      en: [
+        { label: "P99 Latency", value: "-35%" },
+        { label: "Throughput", value: "3.8x" },
+        { label: "Cost", value: "-40%" },
+      ],
+    },
     links: [
       { label: "Repo", href: "#" },
       { label: "Demo", href: "#" },
@@ -114,11 +124,18 @@ export const projects: Project[] = [
     role: "ML Engineer",
     period: "2023 - 2024",
     stack: ["TensorRT-LLM", "CUDA", "Triton", "PyTorch"],
-    metrics: [
-      { label: "显存占用", value: "-45%" },
-      { label: "吞吐提升", value: "2.6x" },
-      { label: "质量损失", value: "<1%" },
-    ],
+    metrics: {
+      zh: [
+        { label: "显存占用", value: "-45%" },
+        { label: "吞吐提升", value: "2.6x" },
+        { label: "质量损失", value: "<1%" },
+      ],
+      en: [
+        { label: "VRAM", value: "-45%" },
+        { label: "Throughput", value: "2.6x" },
+        { label: "Quality Loss", value: "<1%" },
+      ],
+    },
     links: [
       { label: "Repo", href: "#" },
       { label: "Report", href: "#" },
@@ -177,10 +194,16 @@ export const projects: Project[] = [
     role: "Backend Engineer",
     period: "2022 - 2023",
     stack: ["Prometheus", "Grafana", "OpenTelemetry", "Kafka"],
-    metrics: [
-      { label: "异常发现", value: "-60%" },
-      { label: "指标覆盖", value: "90%+" },
-    ],
+    metrics: {
+      zh: [
+        { label: "异常发现", value: "-60%" },
+        { label: "指标覆盖", value: "90%+" },
+      ],
+      en: [
+        { label: "Incident Detection", value: "-60%" },
+        { label: "Metric Coverage", value: "90%+" },
+      ],
+    },
     links: [
       { label: "Dashboard", href: "#" },
       { label: "Report", href: "#" },
