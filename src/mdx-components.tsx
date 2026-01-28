@@ -15,12 +15,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </a>
     ),
     code: ({ children }) => (
-      <code className="rounded bg-neutral-100 px-1 py-0.5 text-sm">
+      <code className="rounded bg-slate-100/80 px-1 py-0.5 text-sm text-slate-700">
         {children}
       </code>
     ),
     pre: ({ children }) => (
-      <pre className="mb-4 overflow-x-auto rounded bg-neutral-100 p-4 text-sm">
+      <pre className="mb-4 overflow-x-auto rounded bg-slate-100/80 p-4 text-sm text-slate-700">
         {children}
       </pre>
     ),

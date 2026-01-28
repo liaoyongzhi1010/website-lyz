@@ -134,14 +134,14 @@ export default async function HomePage({
     <div className="flex flex-col gap-10">
       <Hero lang={lang} />
       <MetricBar metrics={copy.metrics} />
-      <section className="space-y-5">
+      <section className="fade-up fade-up-delay-2 space-y-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-neutral-900">
+          <h2 className="text-lg font-semibold text-slate-900">
             {copy.sectionProjects}
           </h2>
           <a
             href={`/${lang}/projects`}
-            className="text-sm font-semibold text-neutral-600 hover:text-neutral-900"
+            className="text-sm font-semibold text-slate-600 transition hover:text-blue-700"
           >
             {lang === "zh" ? "查看全部" : "View all"}
           </a>

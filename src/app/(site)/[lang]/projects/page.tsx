@@ -28,10 +28,10 @@ export default async function ProjectsPage({
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
-        <h1 className="text-2xl font-semibold text-neutral-900">
+        <h1 className="text-2xl font-semibold text-slate-900">
           {copy.title}
         </h1>
-        <p className="text-sm text-neutral-600">{copy.intro}</p>
+        <p className="text-sm text-slate-600">{copy.intro}</p>
       </div>
       <div className="grid gap-6 lg:grid-cols-3">
         {projects.map((project) => (

@@ -51,17 +51,17 @@ export default async function BlogPage({
       {posts[lang].map((post) => (
         <article
           key={post.title}
-          className="rounded-2xl border border-neutral-200 bg-white p-5"
+          className="rounded-2xl border border-slate-200/70 bg-white/80 p-5 shadow-[0_16px_40px_-35px_rgba(37,99,235,0.45)]"
         >
-          <h2 className="text-base font-semibold text-neutral-900">
+          <h2 className="text-base font-semibold text-slate-900">
             {post.title}
           </h2>
-          <p className="mt-2 text-sm text-neutral-600">{post.summary}</p>
+          <p className="mt-2 text-sm text-slate-600">{post.summary}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-xs text-neutral-500"
+                className="rounded-full border border-slate-200/80 bg-slate-50/80 px-2.5 py-1 text-xs text-slate-500"
               >
                 {tag}
               </span>

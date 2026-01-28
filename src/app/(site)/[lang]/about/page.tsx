@@ -46,33 +46,33 @@ export default async function AboutPage({
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
-        <h1 className="text-2xl font-semibold text-neutral-900">
+        <h1 className="text-2xl font-semibold text-slate-900">
           {copy.title}
         </h1>
-        <p className="text-sm text-neutral-600">{copy.summary}</p>
+        <p className="text-sm text-slate-600">{copy.summary}</p>
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
-        <section className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-neutral-900">
+        <section className="rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-[0_16px_40px_-35px_rgba(37,99,235,0.45)]">
+          <h2 className="text-base font-semibold text-slate-900">
             {lang === "zh" ? "能力重点" : "Focus Areas"}
           </h2>
-          <ul className="mt-4 grid gap-2 text-sm text-neutral-600">
+          <ul className="mt-4 grid gap-2 text-sm text-slate-600">
             {copy.bullets.map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </section>
-        <section className="rounded-2xl border border-neutral-200 bg-white p-6">
-          <h2 className="text-base font-semibold text-neutral-900">
+        <section className="rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-[0_16px_40px_-35px_rgba(37,99,235,0.45)]">
+          <h2 className="text-base font-semibold text-slate-900">
             {lang === "zh" ? "里程碑" : "Milestones"}
           </h2>
-          <div className="mt-4 grid gap-3 text-sm text-neutral-600">
+          <div className="mt-4 grid gap-3 text-sm text-slate-600">
             {copy.timeline.map((row) => (
               <div key={row.year} className="flex items-start gap-4">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-400">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                   {row.year}
                 </span>
                 <span>{row.item}</span>
