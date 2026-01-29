@@ -4,16 +4,16 @@ type HeroProps = {
 
 const content = {
   zh: {
-    headline: "大模型工程化与推理优化工程师",
+    headline: "大模型算法/应用工程师",
     subhead:
-      "专注 LLM Serving、推理性能优化与成本控制，落地高并发、可观测的模型服务系统。",
+      "专注微调、RAG、Agent 与 MCP 工程化落地，打造可靠可控的智能系统。",
     ctaPrimary: "查看项目",
     ctaSecondary: "联系我",
   },
   en: {
-    headline: "LLM Engineering & Inference Optimization",
+    headline: "LLM Algorithm & Applied Engineer",
     subhead:
-      "Focused on LLM serving, inference performance, and cost efficiency with production-grade systems.",
+      "Focused on finetuning, RAG systems, agent reliability, and MCP integration in production.",
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact",
   },
