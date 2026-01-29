@@ -11,15 +11,15 @@ export const categoryMeta: Record<
 > = {
   llm: {
     title: "大模型知识",
-    description: "推理链路、系统吞吐与成本/性能权衡。",
+    description: "微调、RAG 与 Agent 体系的系统化实践。",
   },
   algo: {
     title: "算法知识",
-    description: "核心算法机制、评测方法与可靠性。",
+    description: "评测、对齐与可靠性的工程化方法论。",
   },
   dev: {
     title: "开发知识",
-    description: "工程落地、工具链与团队协作实践。",
+    description: "MCP、插件与工程化落地实践。",
   },
 };
 

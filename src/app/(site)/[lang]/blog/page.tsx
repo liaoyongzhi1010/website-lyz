@@ -21,15 +21,15 @@ export default async function BlogPage({
         <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="flex flex-col gap-5">
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100/80 bg-blue-50/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-blue-700">
-              Product Knowledge Hub
+              LLM Applied Hub
               <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
               2026
             </div>
             <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-              产品架构师的知识库
+              大模型算法/应用知识库
             </h1>
             <p className="max-w-xl text-base leading-7 text-slate-600">
-              以产品视角拆解大模型系统、算法机制与工程落地，沉淀可复用的架构方法论。
+              聚焦微调、RAG、Agent 与 MCP 工程化落地的实践与方法论。
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <a
@@ -76,7 +76,7 @@ export default async function BlogPage({
               知识目录
             </h2>
             <p className="mt-2 text-sm text-slate-600">
-              以产品架构的视角组织内容，快速定位你想要的知识域。
+              以大模型算法/应用视角组织内容，快速定位你需要的方向。
             </p>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default async function BlogPage({
                 >
                   <div className="flex items-center justify-between text-xs text-slate-500">
                     <span>{post.date}</span>
-                    <span>Product Architecture Notes</span>
+                    <span>LLM Applied Notes</span>
                   </div>
                   <h3 className="mt-3 text-base font-semibold text-slate-900">
                     {post.title}
