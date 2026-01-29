@@ -16,12 +16,13 @@ export default async function ProjectsPage({
     lang === "zh"
       ? {
           title: "项目展示",
-          intro: "聚焦推理优化、Serving 架构与评测体系。",
+          intro: "聚焦微调、RAG、Agent 与 MCP 工程化落地。",
           details: "详情",
         }
       : {
           title: "Projects",
-          intro: "Focused on inference optimization, serving systems, and evaluation.",
+          intro:
+            "Focused on finetuning, RAG, agent reliability, and MCP integration.",
           details: "Details",
         };
 
@@ -40,11 +41,6 @@ export default async function ProjectsPage({
             title={project.i18n[lang].title}
             summary={project.i18n[lang].summary}
             stack={project.stack}
-            metrics={project.metrics[lang].map((metric) =>
-              metric.note
-                ? `${metric.label} ${metric.value} · ${metric.note}`
-                : `${metric.label} ${metric.value}`,
-            )}
             links={[
               { label: copy.details, href: `/${lang}/projects/${project.slug}` },
               ...(project.links[0] ? [project.links[0]] : []),

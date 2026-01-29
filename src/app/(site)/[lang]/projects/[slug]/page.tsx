@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import ProjectArchitecture from "@/components/projects/ProjectArchitecture";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectLinks from "@/components/projects/ProjectLinks";
-import ProjectMetrics from "@/components/projects/ProjectMetrics";
 import ProjectOverview from "@/components/projects/ProjectOverview";
 import ProjectTech from "@/components/projects/ProjectTech";
 import { projects } from "@/content/projects";
@@ -50,7 +49,6 @@ export default async function ProjectDetailPage({
           solution: "方案",
           impact: "影响",
           architecture: "架构",
-          metrics: "关键指标",
           tech: "关键技术",
           links: "证据链接",
         }
@@ -60,7 +58,6 @@ export default async function ProjectDetailPage({
           solution: "Solution",
           impact: "Impact",
           architecture: "Architecture",
-          metrics: "Key Metrics",
           tech: "Key Techniques",
           links: "Evidence",
         };
@@ -85,7 +82,6 @@ export default async function ProjectDetailPage({
         description={architectureSection?.body ?? ""}
         image={project.cover}
       />
-      <ProjectMetrics title={labels.metrics} metrics={project.metrics[lang]} />
       <ProjectTech title={labels.tech} sections={techSections} />
       <ProjectLinks title={labels.links} links={project.links} />
     </div>

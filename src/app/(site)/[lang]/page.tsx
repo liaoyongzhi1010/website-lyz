@@ -1,5 +1,4 @@
 import Hero from "@/components/site/Hero";
-import MetricBar from "@/components/site/MetricBar";
 import ProjectCard from "@/components/site/ProjectCard";
 import TechStack from "@/components/site/TechStack";
 
@@ -7,55 +6,48 @@ const content = {
   zh: {
     sectionProjects: "代表项目",
     sectionStack: "核心技术栈",
-    metrics: [
-      { label: "吞吐", value: "4.2x", note: "批处理 + KV Cache" },
-      { label: "延迟", value: "-38%", note: "推理路径优化" },
-      { label: "成本", value: "-42%", note: "量化与资源调度" },
-    ],
     stack: [
       "PyTorch",
-      "TensorRT-LLM",
-      "vLLM",
-      "Triton",
-      "CUDA",
+      "Transformers",
+      "LoRA",
+      "LangChain",
+      "FAISS",
       "FastAPI",
-      "Ray",
+      "MCP",
+      "Redis",
+      "PostgreSQL",
+      "Docker",
       "K8s",
-      "Prometheus",
-      "Grafana",
     ],
     projects: [
       {
-        title: "高并发 LLM Serving 平台",
+        title: "基于 RAG 的面试官系统",
         summary:
-          "构建支持多模型、多租户的推理平台，提供动态批处理、路由与观测能力。",
-        stack: ["vLLM", "Ray", "K8s"],
-        metrics: ["P99 延迟降低 35%", "单机吞吐提升 3.8x", "成本下降 40%"],
+          "面向结构化面试场景的 RAG 系统，支持岗位知识检索与追问评分。",
+        stack: ["LangChain", "FAISS", "FastAPI"],
         links: [
-          { label: "Repo", href: "#" },
           { label: "Demo", href: "#" },
+          { label: "Docs", href: "#" },
         ],
       },
       {
-        title: "推理优化与量化部署",
+        title: "可信计算 Agent 的 VSCode 插件",
         summary:
-          "完成 INT8/FP8 量化与 TensorRT-LLM 部署，构建自动化评测与回归流程。",
-        stack: ["TensorRT-LLM", "CUDA", "Triton"],
-        metrics: ["显存占用下降 45%", "吞吐提升 2.6x", "质量损失 < 1%"],
+          "最小权限工具调用与审计链路，保障企业内网环境的可控 Agent 使用。",
+        stack: ["VSCode", "Node.js", "OpenTelemetry"],
         links: [
-          { label: "Benchmark", href: "#" },
-          { label: "Repo", href: "#" },
+          { label: "Demo", href: "#" },
+          { label: "Spec", href: "#" },
         ],
       },
       {
-        title: "评测与可观测体系",
+        title: "AI MCP 网关",
         summary:
-          "搭建离线评测 + 在线监控体系，形成统一指标与报警策略。",
-        stack: ["Prometheus", "Grafana", "OpenTelemetry"],
-        metrics: ["线上异常发现时间缩短 60%", "指标覆盖 90%+"],
+          "统一工具编排、权限隔离与审计的多 Agent 网关层。",
+        stack: ["MCP", "FastAPI", "Redis"],
         links: [
-          { label: "Dashboard", href: "#" },
-          { label: "Report", href: "#" },
+          { label: "Spec", href: "#" },
+          { label: "Docs", href: "#" },
         ],
       },
     ],
@@ -63,55 +55,48 @@ const content = {
   en: {
     sectionProjects: "Featured Projects",
     sectionStack: "Core Stack",
-    metrics: [
-      { label: "Throughput", value: "4.2x", note: "Batching + KV Cache" },
-      { label: "Latency", value: "-38%", note: "Inference path tuning" },
-      { label: "Cost", value: "-42%", note: "Quantization + scheduling" },
-    ],
     stack: [
       "PyTorch",
-      "TensorRT-LLM",
-      "vLLM",
-      "Triton",
-      "CUDA",
+      "Transformers",
+      "LoRA",
+      "LangChain",
+      "FAISS",
       "FastAPI",
-      "Ray",
+      "MCP",
+      "Redis",
+      "PostgreSQL",
+      "Docker",
       "K8s",
-      "Prometheus",
-      "Grafana",
     ],
     projects: [
       {
-        title: "High-Throughput LLM Serving",
+        title: "RAG Interviewer System",
         summary:
-          "Built a multi-tenant serving platform with dynamic batching, routing, and observability.",
-        stack: ["vLLM", "Ray", "K8s"],
-        metrics: ["P99 latency -35%", "Throughput +3.8x", "Cost -40%"],
+          "RAG system for structured interviews with role knowledge retrieval and scoring.",
+        stack: ["LangChain", "FAISS", "FastAPI"],
         links: [
-          { label: "Repo", href: "#" },
           { label: "Demo", href: "#" },
+          { label: "Docs", href: "#" },
         ],
       },
       {
-        title: "Inference Optimization & Quantization",
+        title: "Trusted Agent VSCode Extension",
         summary:
-          "INT8/FP8 deployment with TensorRT-LLM and automated benchmark pipeline.",
-        stack: ["TensorRT-LLM", "CUDA", "Triton"],
-        metrics: ["VRAM -45%", "Throughput +2.6x", "Quality loss <1%"],
+          "Least-privilege agent tools with audit trails for enterprise workflows.",
+        stack: ["VSCode", "Node.js", "OpenTelemetry"],
         links: [
-          { label: "Benchmark", href: "#" },
-          { label: "Repo", href: "#" },
+          { label: "Demo", href: "#" },
+          { label: "Spec", href: "#" },
         ],
       },
       {
-        title: "Evaluation & Observability",
+        title: "AI MCP Gateway",
         summary:
-          "Unified offline evaluation with online monitoring, alerts, and dashboarding.",
-        stack: ["Prometheus", "Grafana", "OpenTelemetry"],
-        metrics: ["Incident detection -60%", "90%+ metric coverage"],
+          "Unified orchestration, permission isolation, and audit for multi-agent tools.",
+        stack: ["MCP", "FastAPI", "Redis"],
         links: [
-          { label: "Dashboard", href: "#" },
-          { label: "Report", href: "#" },
+          { label: "Spec", href: "#" },
+          { label: "Docs", href: "#" },
         ],
       },
     ],
@@ -133,7 +118,6 @@ export default async function HomePage({
   return (
     <div className="flex flex-col gap-10">
       <Hero lang={lang} />
-      <MetricBar metrics={copy.metrics} />
       <section className="fade-up fade-up-delay-2 space-y-5">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-slate-900">

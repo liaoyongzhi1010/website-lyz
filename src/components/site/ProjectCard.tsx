@@ -7,7 +7,6 @@ type ProjectCardProps = {
   title: string;
   summary: string;
   stack: string[];
-  metrics: string[];
   links: ProjectLink[];
 };
 
@@ -15,7 +14,6 @@ export default function ProjectCard({
   title,
   summary,
   stack,
-  metrics,
   links,
 }: ProjectCardProps) {
   return (
@@ -34,14 +32,6 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
-      <ul className="grid gap-2 text-sm text-slate-600">
-        {metrics.map((metric) => (
-          <li key={metric} className="flex items-start gap-2">
-            <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
-            <span>{metric}</span>
-          </li>
-        ))}
-      </ul>
       <div className="mt-auto flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
         {links.map((link) => (
           <a

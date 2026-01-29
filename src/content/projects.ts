@@ -6,12 +6,6 @@ export type ProjectI18n = {
   impact: string[];
 };
 
-export type ProjectMetric = {
-  label: string;
-  value: string;
-  note?: string;
-};
-
 export type ProjectLink = {
   label: string;
   href: string;
@@ -28,10 +22,6 @@ export type Project = {
   role: string;
   period: string;
   stack: string[];
-  metrics: {
-    zh: ProjectMetric[];
-    en: ProjectMetric[];
-  };
   links: ProjectLink[];
   i18n: {
     zh: ProjectI18n;
@@ -45,53 +35,37 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "llm-serving-platform",
+    slug: "rag-interviewer",
     cover: "/assets/projects/llm-serving-platform/cover.png",
-    role: "Tech Lead / Backend",
+    role: "LLM Applied Engineer",
     period: "2024 - 2025",
-    stack: ["vLLM", "Ray", "K8s", "FastAPI", "Prometheus"],
-    metrics: {
-      zh: [
-        { label: "P99 延迟", value: "-35%" },
-        { label: "吞吐提升", value: "3.8x" },
-        { label: "成本下降", value: "40%" },
-      ],
-      en: [
-        { label: "P99 Latency", value: "-35%" },
-        { label: "Throughput", value: "3.8x" },
-        { label: "Cost", value: "-40%" },
-      ],
-    },
-    links: [
-      { label: "Repo", href: "#" },
-      { label: "Demo", href: "#" },
-      { label: "Benchmark", href: "#" },
-    ],
+    stack: ["PyTorch", "LangChain", "FAISS", "FastAPI", "PostgreSQL"],
+    links: [{ label: "Demo", href: "#" }],
     i18n: {
       zh: {
-        title: "高并发 LLM Serving 平台",
+        title: "基于 RAG 的面试官系统",
         summary:
-          "面向多模型、多租户的推理平台，支持动态批处理、路由与全链路可观测。",
+          "构建面向结构化面试场景的 RAG 系统，支持岗位知识检索、追问策略与可解释反馈。",
         problem:
-          "生产环境存在高并发推理需求，但延迟、成本与稳定性难以兼顾，缺少统一的路由与监控能力。",
+          "面试题库更新频繁，泛化能力弱，难以保证答案准确性与追问深度。",
         solution:
-          "构建多层服务架构，引入动态批处理与智能路由，配套可观测体系与自动回滚。",
+          "引入多路检索 + 重排与问题分解链路，结合岗位画像生成结构化提问与评分要点。",
         impact: [
-          "P99 延迟降低 35%，峰值吞吐提升 3.8x。",
-          "GPU 成本下降 40%，服务稳定性显著提高。",
+          "面试问题覆盖率显著提升，知识更新成本降低。",
+          "评估一致性提升，输出可解释的面试报告。",
         ],
       },
       en: {
-        title: "High-Throughput LLM Serving Platform",
+        title: "RAG-powered Interviewer System",
         summary:
-          "A multi-model, multi-tenant serving platform with dynamic batching, routing, and observability.",
+          "Built a structured interview system with RAG for role-specific retrieval, follow-up reasoning, and explainable feedback.",
         problem:
-          "Production traffic required low latency and high throughput, but cost and stability were hard to balance.",
+          "Interview knowledge changes quickly and responses lacked depth and consistency.",
         solution:
-          "Designed a layered serving stack with dynamic batching, intelligent routing, and end-to-end observability.",
+          "Designed multi-source retrieval with re-ranking and question decomposition, plus role profiles for scoring rubrics.",
         impact: [
-          "P99 latency -35% and peak throughput +3.8x.",
-          "GPU cost -40% with improved stability.",
+          "Improved question coverage and reduced content maintenance cost.",
+          "Delivered consistent evaluations with explainable reports.",
         ],
       },
     },
@@ -99,69 +73,115 @@ export const projects: Project[] = [
       zh: [
         {
           title: "架构",
-          body: "采用接入层 + 路由层 + 推理层的三层结构，支持多模型调度与灰度发布。",
+          body: "检索层 + 重排层 + 追问策略层，支持题库与公司知识库的混合召回。",
         },
         {
           title: "关键技术",
-          body: "动态批处理、KV Cache 管理、冷热模型路由、SLO 驱动的扩缩容。",
+          body: "多路检索、向量/关键词混合召回、问题分解与评分要点生成。",
         },
       ],
       en: [
         {
           title: "Architecture",
-          body: "Three-layer design: ingress, routing, and inference, supporting multi-model scheduling and canary releases.",
+          body: "Retrieval + re-ranking + follow-up planning, combining question bank and company knowledge base.",
         },
         {
           title: "Key Techniques",
-          body: "Dynamic batching, KV cache management, hot/cold routing, SLO-driven autoscaling.",
+          body: "Hybrid retrieval, multi-source re-ranking, question decomposition, and scoring rubric generation.",
         },
       ],
     },
   },
   {
-    slug: "inference-quantization",
+    slug: "trusted-agent-vscode",
     cover: "/assets/projects/inference-quantization/cover.png",
-    role: "ML Engineer",
-    period: "2023 - 2024",
-    stack: ["TensorRT-LLM", "CUDA", "Triton", "PyTorch"],
-    metrics: {
-      zh: [
-        { label: "显存占用", value: "-45%" },
-        { label: "吞吐提升", value: "2.6x" },
-        { label: "质量损失", value: "<1%" },
-      ],
-      en: [
-        { label: "VRAM", value: "-45%" },
-        { label: "Throughput", value: "2.6x" },
-        { label: "Quality Loss", value: "<1%" },
-      ],
-    },
-    links: [
-      { label: "Repo", href: "#" },
-      { label: "Report", href: "#" },
-    ],
+    role: "LLM Engineer",
+    period: "2024",
+    stack: ["VSCode API", "Node.js", "OpenAI API", "OpenTelemetry"],
+    links: [{ label: "Demo", href: "#" }],
     i18n: {
       zh: {
-        title: "推理优化与量化部署",
-        summary: "完成 INT8/FP8 量化与 TensorRT-LLM 部署流程，建立自动评测。",
-        problem: "大模型推理成本高，显存受限，在线吞吐不足。",
-        solution: "使用量化与算子优化结合，构建自动化评测与回归验证。",
+        title: "可信计算 Agent 的 VSCode 插件",
+        summary:
+          "面向研发场景的可信 Agent 插件，支持最小权限工具调用与可审计链路。",
+        problem:
+          "开发工具链中 Agent 权限过大、执行不可追踪，存在安全与合规风险。",
+        solution:
+          "构建最小权限工具调用与审计日志体系，支持运行前意图确认与风险提示。",
         impact: [
-          "显存占用降低 45%，吞吐提升 2.6x。",
-          "线上质量损失控制在 1% 以内。",
+          "显著降低误调用风险，提升可追踪性与可控性。",
+          "为企业内网环境提供可落地的 Agent 方案。",
         ],
       },
       en: {
-        title: "Inference Optimization & Quantization",
+        title: "Trusted Agent VSCode Extension",
         summary:
-          "Implemented INT8/FP8 quantization with TensorRT-LLM and automated evaluation pipelines.",
+          "Built a trusted agent extension with least-privilege tools and auditable execution for developer workflows.",
         problem:
-          "LLM inference cost was high, memory footprint large, and throughput insufficient.",
+          "Agents in dev tools had excessive privileges and low traceability, causing security concerns.",
         solution:
-          "Applied quantization with kernel optimizations and built automated evaluation for regressions.",
+          "Designed permission-scoped tools with audit logging, intent confirmation, and risk prompts.",
         impact: [
-          "VRAM usage -45% and throughput +2.6x.",
-          "Quality loss kept under 1%.",
+          "Reduced mis-execution risk and improved observability.",
+          "Enabled enterprise-friendly agent adoption in secure environments.",
+        ],
+      },
+    },
+    sections: {
+      zh: [
+        {
+          title: "架构",
+          body: "插件侧上下文采集 + MCP 调用层 + 审计与风控模块。",
+        },
+        {
+          title: "关键技术",
+          body: "最小权限工具封装、执行审计、可回放的操作记录。",
+        },
+      ],
+      en: [
+        {
+          title: "Architecture",
+          body: "Context capture + MCP invocation layer + audit & risk control modules.",
+        },
+        {
+          title: "Key Techniques",
+          body: "Least-privilege tools, execution audit, and replayable action logs.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "crypto-llm-finetune",
+    cover: "/assets/projects/evaluation-observability/cover.png",
+    role: "LLM Algorithm Engineer",
+    period: "2023 - 2024",
+    stack: ["PyTorch", "LoRA", "Deepspeed", "Transformers"],
+    links: [{ label: "Report", href: "#" }],
+    i18n: {
+      zh: {
+        title: "密码大模型微调",
+        summary:
+          "构建密码学领域专用语料与指令集，完成高质量微调与评测基线。",
+        problem:
+          "通用大模型在密码学场景理解薄弱，专业术语与推理错误率高。",
+        solution:
+          "建立领域语料与指令集，采用 LoRA 进行高效微调，并搭建评测基线。",
+        impact: [
+          "显著提升密码学任务的准确性与一致性。",
+          "形成可复用的领域微调流程与评测标准。",
+        ],
+      },
+      en: {
+        title: "Cryptography LLM Finetuning",
+        summary:
+          "Built domain corpora and instruction sets for cryptography, delivering finetuning and evaluation baselines.",
+        problem:
+          "General LLMs were weak in cryptography, with high error rates on specialized reasoning.",
+        solution:
+          "Curated domain data and instructions, applied LoRA finetuning, and built evaluation benchmarks.",
+        impact: [
+          "Improved accuracy and consistency in crypto tasks.",
+          "Established reusable finetuning and evaluation workflows.",
         ],
       },
     },
@@ -169,86 +189,79 @@ export const projects: Project[] = [
       zh: [
         {
           title: "流程",
-          body: "量化策略选择 -> TensorRT-LLM 构建 -> 自动评测 -> 线上灰度。",
+          body: "语料构建 -> 指令设计 -> LoRA 微调 -> 评测回归。",
         },
         {
           title: "关键技术",
-          body: "INT8/FP8 量化、算子融合、离线-在线一致性校验。",
+          body: "领域语料清洗、指令模板、对齐评测与误差分析。",
         },
       ],
       en: [
         {
           title: "Pipeline",
-          body: "Quantization strategy -> TensorRT-LLM build -> automated eval -> staged rollout.",
+          body: "Data curation -> instruction design -> LoRA finetune -> evaluation regressions.",
         },
         {
           title: "Key Techniques",
-          body: "INT8/FP8 quantization, kernel fusion, offline-online consistency checks.",
+          body: "Domain data cleaning, instruction templates, alignment evaluation, error analysis.",
         },
       ],
     },
   },
   {
-    slug: "evaluation-observability",
-    cover: "/assets/projects/evaluation-observability/cover.png",
-    role: "Backend Engineer",
-    period: "2022 - 2023",
-    stack: ["Prometheus", "Grafana", "OpenTelemetry", "Kafka"],
-    metrics: {
-      zh: [
-        { label: "异常发现", value: "-60%" },
-        { label: "指标覆盖", value: "90%+" },
-      ],
-      en: [
-        { label: "Incident Detection", value: "-60%" },
-        { label: "Metric Coverage", value: "90%+" },
-      ],
-    },
-    links: [
-      { label: "Dashboard", href: "#" },
-      { label: "Report", href: "#" },
-    ],
+    slug: "mcp-gateway",
+    cover: "/assets/projects/llm-serving-platform/cover.png",
+    role: "Applied Engineer",
+    period: "2025",
+    stack: ["MCP", "FastAPI", "Redis", "PostgreSQL", "K8s"],
+    links: [{ label: "Spec", href: "#" }],
     i18n: {
       zh: {
-        title: "评测与可观测体系",
-        summary: "建立离线评测与线上监控体系，形成统一指标口径。",
-        problem: "质量回归难以及时发现，缺少统一监控与报警。",
-        solution: "构建评测基线与线上观测指标，结合报警与复盘机制。",
-        impact: ["异常发现时间缩短 60%。", "指标覆盖超过 90%。"],
+        title: "AI MCP 网关",
+        summary:
+          "面向多 Agent 场景的 MCP 网关，提供统一工具编排、权限隔离与审计。",
+        problem:
+          "多 Agent 工具调用缺乏统一入口，权限与审计难以管理。",
+        solution:
+          "设计 MCP 网关层，统一工具注册、权限策略与调用链路追踪。",
+        impact: [
+          "提升工具调用可控性与合规性。",
+          "显著降低跨团队集成成本。",
+        ],
       },
       en: {
-        title: "Evaluation & Observability System",
+        title: "AI MCP Gateway",
         summary:
-          "Built offline evaluation and online monitoring with unified metric definitions.",
+          "Built an MCP gateway for multi-agent tool orchestration, permission isolation, and audit logging.",
         problem:
-          "Quality regressions were hard to detect, and monitoring was fragmented.",
+          "Tool invocation across agents lacked a unified entry point and governance.",
         solution:
-          "Established evaluation baselines, online metrics, alerts, and review workflows.",
+          "Designed a gateway layer for tool registration, access policies, and tracing.",
         impact: [
-          "Incident detection time reduced by 60%.",
-          "Metric coverage exceeded 90%.",
+          "Improved controllability and compliance for tool calls.",
+          "Reduced cross-team integration cost.",
         ],
       },
     },
     sections: {
       zh: [
         {
-          title: "体系",
-          body: "离线评测 + 在线指标 + 报警 + 复盘闭环。",
+          title: "架构",
+          body: "网关层统一接入，支持权限策略、速率限制与审计。",
         },
         {
           title: "关键技术",
-          body: "统一指标口径、Trace 采样、异常检测与自动告警。",
+          body: "MCP 协议适配、权限隔离、调用链路追踪与回放。",
         },
       ],
       en: [
         {
-          title: "System",
-          body: "Offline evaluation + online metrics + alerts + postmortem loop.",
+          title: "Architecture",
+          body: "Gateway layer for unified access with policy control, rate limits, and auditing.",
         },
         {
           title: "Key Techniques",
-          body: "Unified metrics, trace sampling, anomaly detection, and automated alerts.",
+          body: "MCP protocol adaptation, permission isolation, tracing and replay.",
         },
       ],
     },
