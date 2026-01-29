@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { useMDXComponents } from "@/mdx-components";
+import { useMDXComponents as getMDXComponents } from "@/mdx-components";
 import { categories, getAllPosts, getPostBySlug, type Category } from "@/lib/blog";
 
 export const dynamicParams = false;
@@ -40,7 +40,7 @@ export default async function BlogPostPage({
 
   const { content } = await compileMDX({
     source: post.content,
-    components: useMDXComponents({}),
+    components: getMDXComponents({}),
   });
 
   return (
